@@ -23,8 +23,8 @@ export const PAGES = [
   },
 
   {
-    title: "Shop",
-    href: "/shop",
+    title: "Products",
+    href: "/products",
   },
 
   {
