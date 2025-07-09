@@ -1,0 +1,54 @@
+.BannerSection {
+  width: 100dvw;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    height: 100dvh;
+    width: 100dvw;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.507);
+  }
+
+  .cont {
+    display: flex;
+    align-items: center;
+    height: 100dvh;
+    position: relative;
+    z-index: 10;
+
+    .left {
+      max-width: 700px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      h1 {
+        font-size: 80px;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      p {
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+
+    @include respond-below(md) {
+      .left {
+        h1 {
+          font-size: 50px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

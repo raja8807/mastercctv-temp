@@ -1,0 +1,74 @@
+.BestPractices {
+  padding: 100px 0;
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+
+    .img {
+      position: relative;
+      > div {
+        position: absolute;
+        margin-inline-start: -40px;
+        bottom: 0;
+        background-color: #f3f5fa;
+        padding: 35px 40px;
+        font-size: 20px;
+        font-family: var(--cms-heading-family);
+        font-style: italic;
+        font-weight: 700;
+        color: var(--cms-heading-regular);
+        max-width: 310px;
+        box-shadow: 40px -40px #fff;
+        margin-bottom: -40px;
+      }
+    }
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      h2 {
+        font-weight: bold;
+        font-size: 32px;
+      }
+
+      p {
+        color: $color-g2;
+        font-size: 18px;
+      }
+
+      b {
+        color: $color-g3;
+        font-size: 18px;
+      }
+
+      .list {
+        > div {
+          display: flex;
+          gap: 10px;
+          margin-bottom: 20px;
+
+          p {
+            font-size: 16px;
+            font-weight: 500;
+          }
+          svg {
+            color: $color-s1;
+            font-size: 25px;
+            margin-top: 2px;
+          }
+        }
+      }
+    }
+
+    @include respond-above(md) {
+      flex-direction: row-reverse;
+      .img,
+      .text {
+        width: 50%;
+      }
+    }
+  }
+}

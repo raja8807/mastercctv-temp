@@ -1,0 +1,20 @@
+.PageSelector {
+  display: flex;
+  gap: 4px;
+  
+
+  button {
+    font-size: 14px;
+    border: none;
+    background-color: white;
+    border: 1px solid $color_p1;
+    border-radius: 4px;
+    height: 30px;
+    width: 30px;
+    @include flexCenter;
+    &.active {
+      background-color: $color_p1;
+      color: white;
+    }
+  }
+}

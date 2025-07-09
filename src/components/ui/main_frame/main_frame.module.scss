@@ -1,0 +1,22 @@
+.MainFrame {
+  padding: 20px 20px 0 20px;
+  width: 100%;
+  height: calc(100dvh - 178px);
+  overflow-y: auto;
+  @include respond-below(md){
+    padding: 20px 15px 0 15px;
+  }
+}
+
+.head {
+  h3 {
+    font-size: 25px;
+  }
+  p {
+    color: $color_g3;
+    font-size: 15px;
+  }
+
+  // margin: 0 20px 20px 20px;
+  margin-bottom: 20px;
+}

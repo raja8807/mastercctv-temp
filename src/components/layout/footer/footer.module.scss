@@ -1,0 +1,88 @@
+.Footer {
+  background-color: #010d20;
+
+  .top {
+    padding: 80px 0 40px 0;
+
+    .box {
+      margin-bottom: 50px;
+      h4 {
+        color: $color-s1;
+        font-size: 16px;
+      }
+
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      a {
+        color: $color-w1;
+        font-size: 14px;
+        // font-weight: 500;
+
+        &:hover {
+          color: $color-s1;
+        }
+      }
+    }
+
+    .contact {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .row {
+        color: $color-s1;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        font-size: 16px;
+      }
+
+      .add {
+        color: $color-g1;
+        font-size: 15px;
+      }
+    }
+  }
+
+  .social {
+    padding-bottom: 20px;
+    display: flex;
+
+    .links {
+      display: flex;
+      gap: 20px;
+
+      > a {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 14px;
+        font-weight: 400;
+        color: white;
+
+        svg {
+          color: $color-s1;
+        }
+
+        &:hover {
+          color: $color-s1;
+
+          svg {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .bottom {
+    text-align: center;
+    color: $color-g1;
+    font-size: 14px;
+    padding: 50px 0;
+    border-top: 1px solid $color-g1;
+    a {
+      color: $color-s1;
+    }
+  }
+}

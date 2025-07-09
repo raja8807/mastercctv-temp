@@ -1,0 +1,66 @@
+.MenuButton {
+  svg {
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+  }
+
+  .drawer {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100dvw;
+    background-color: white;
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+
+    &.active {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+
+    .nav {
+      padding: 20px 0;
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        li {
+          margin-right: 20px;
+          a {
+            color: $color-p1;
+            font-weight: 600;
+            width: 100%;
+            font-size: 17px;
+          }
+
+          &.active {
+            border-bottom: 3px solid $color-s1;
+            a {
+              color: $color-s1;
+            }
+          }
+
+          &:hover {
+            a {
+              color: $color-s1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include respond-above(md) {
+    display: none;
+  }
+
+  &.scrolled {
+    svg {
+      color: $color-p1;
+    }
+  }
+}

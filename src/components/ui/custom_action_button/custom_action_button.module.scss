@@ -1,0 +1,51 @@
+.CustomIconButton {
+  box-shadow: none;
+  border: none;
+  outline: none;
+  height: 30px;
+  border-radius: 2px;
+
+  font-size: 24px;
+  @include flexCenter;
+  color: white;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+  }
+
+  &.btnType_icon {
+    height: 30px;
+    width: 30px;
+    font-size: 24px;
+  }
+
+  &.btnType_text {
+    // display: none;
+    // height: 30px;
+    // width: 30px;
+    font-size: 15px;
+    padding: 0 14px;
+  }
+
+  &.v1 {
+    background-color: $color_s1;
+  }
+
+  &.v2 {
+    background-color: $color_success;
+  }
+
+  &.v3 {
+    background-color: $color_danger;
+  }
+
+  .spinner {
+    border-width: 3px;
+    height: 20px;
+    width: 20px;
+  }
+}

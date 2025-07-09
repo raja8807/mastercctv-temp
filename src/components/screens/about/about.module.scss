@@ -1,0 +1,196 @@
+.AboutScreen {
+  .banner {
+    height: 100dvh;
+    background-image: url("/images/slider-5-small.webp");
+    background-size: cover;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      height: 100dvh;
+      width: 100dvw;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(
+        rgba(0, 0, 50, 0.8),
+        rgba(0, 0, 0, 0.3)
+      );
+    }
+
+    .cont {
+      position: relative;
+      z-index: 10;
+      @include flexCenter;
+      flex-direction: column;
+      height: 100dvh;
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+      color: white;
+
+      h1 {
+        font-size: 90px;
+      }
+
+      p {
+        font-weight: 600;
+        margin-bottom: 40px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .s1 {
+    padding: 100px 0;
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding-right: 50px;
+
+      h2 {
+        color: $color-p1;
+        font-size: 40px;
+      }
+
+      img {
+        width: 600px;
+        margin-top: 24px;
+        align-self: flex-end;
+      }
+    }
+
+    .rght {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 100%;
+
+      p {
+        font-size: 18px;
+        color: $color-g2;
+      }
+
+      b {
+        color: $color-g3;
+        font-size: 20px;
+      }
+
+      .list {
+        > div {
+          margin: 10px 0;
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          font-size: 17px;
+          color: $color-g1;
+          svg {
+            color: $color-s1;
+          }
+        }
+      }
+    }
+  }
+
+  .s2,
+  .s3,
+  .s4 {
+    height: 100dvh;
+    background-color: #f3f5fa;
+    max-width: 100dvw;
+    overflow: hidden;
+
+    .left {
+      padding: 100px 0;
+
+      height: 100%;
+      width: 100%;
+      @include flexCenter;
+
+      .content {
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        b {
+          color: $color-p2;
+          font-size: 17px;
+        }
+
+        h2 {
+          color: $color-p1;
+          font-size: 35px;
+        }
+
+        p {
+          color: $color-g3;
+        }
+
+        .list {
+          display: flex;
+          gap: 30px;
+          > div {
+            > div {
+              margin: 10px 0;
+              display: flex;
+              gap: 10px;
+              align-items: center;
+              font-size: 17px;
+              color: $color-g1;
+              svg {
+                color: $color-s1;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .right {
+      height: 100dvh;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .s2 {
+    .right {
+      background-image: url("/images/cam-1.webp");
+    }
+  }
+  .s3 {
+    .right {
+      background-image: url("/images/case-5.webp");
+    }
+  }
+  .s4 {
+    .left {
+      .slider {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        .item {
+          .label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3px;
+            b {
+              font-size: 14px;
+            }
+          }
+
+          .progress {
+            height: 5px;
+            background-color: $color_s1;
+          }
+        }
+      }
+    }
+    .right {
+      background-image: url("/images/banner-8.webp");
+    }
+  }
+}
