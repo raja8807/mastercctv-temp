@@ -5,13 +5,13 @@ import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import CustomContainer from "@/components/ui/custom_container/custom_container";
 import CustomButton from "@/components/ui/custom_button/custom_button";
-import { ArrowRight } from "react-bootstrap-icons";
+import { ArrowRight, ShieldFillCheck } from "react-bootstrap-icons";
 
 const BannerSection = () => {
   const slides = [
     {
-      img: "/images/banner/slider-1.webp",
-      head: "Smart Systems For Safe Future!",
+      img: "/images/service-1.webp",
+      head: "CCTV & Video Surveillance",
       text: `Not only will this reduce the probability of crime happening on your property, it will reduce or eliminate any liability that falls on you if you can show you have solid, well-designed commercial building security systems in place.`,
     },
     {
@@ -25,35 +25,29 @@ const BannerSection = () => {
   ];
 
   return (
-    <Slide arrows={false} autoplay>
-      {slides.map((slide, idx) => {
-        return (
-          <div
-            key={`slide_${idx}`}
-            className={styles.BannerSection}
-            style={{
-              backgroundImage: `url(${slide.img})`,
-            }}
-          >
-            <CustomContainer>
-              <div className={styles.cont}>
-                <div className={styles.left}>
-                  <h1>{slide.head}</h1>
-                  <p>{slide.text}</p>
-                  <div className={styles.btns}>
-                    <CustomButton variant={1}>
-                      Explore Our Services <ArrowRight />
-                    </CustomButton>
+    <div
+      
+      className={styles.BannerSection}
+      style={{
+        backgroundImage: `url(${slides[0].img})`,
+      }}
+    >
+      <CustomContainer>
+        <div className={styles.cont}>
+          <div className={styles.left}>
+            <h1>{slides[0].head}</h1>
+            <p>{slides[0].text}</p>
+            <div className={styles.btns}>
+              <CustomButton variant={1}>
+                Protect My Home <ShieldFillCheck />
+              </CustomButton>
 
-                    <CustomButton variant={2}>More About Us!</CustomButton>
-                  </div>
-                </div>
-              </div>
-            </CustomContainer>
+              
+            </div>
           </div>
-        );
-      })}
-    </Slide>
+        </div>
+      </CustomContainer>
+    </div>
   );
 };
 

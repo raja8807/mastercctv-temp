@@ -1,0 +1,95 @@
+.ServiesScreen {
+  .container {
+    display: flex;
+    padding: 80px 0;
+
+    .left {
+      width: 350px;
+
+      .download {
+        margin: 50px 0;
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        padding: 50px 30px;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 50%;
+          height: 5px;
+          background-color: black;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        h3 {
+          font-size: 24px;
+          color: $color-p2;
+        }
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        > div {
+          display: flex;
+          background-color: #1543a0;
+          color: white;
+          cursor: pointer;
+          .icon {
+            padding: 20px;
+            background-color: #2c56a9;
+            svg {
+              font-size: 30px;
+            }
+          }
+
+          .name {
+            padding: 20px;
+            font-weight: 500;
+          }
+
+          &:hover {
+            background-color: $color-s1;
+
+            .icon {
+              background-color: $color-s1;
+            }
+          }
+        }
+      }
+    }
+
+    .right {
+      width: calc(100% - 350px);
+      padding-left: 100px;
+
+      h2 {
+        color: $color-p2;
+        margin-bottom: 20px;
+      }
+
+      p {
+        color: $color-g3;
+        font-size: 17px;
+        margin-bottom: 20px;
+      }
+
+      .line {
+        background-color: $color-s1;
+        height: 7px;
+      }
+    }
+  }
+
+  @include respond-below(md) {
+    .container {
+      flex-direction: column-reverse;
+
+      .left,
+      .right {
+        padding: 0;
+        width: 100%;
+      }
+    }
+  }
+}

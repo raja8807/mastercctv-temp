@@ -23,7 +23,14 @@ const MenuButton = ({ PAGES, router, scrolled }) => {
                   key={page.title}
                   className={router.pathname === page.href ? styles.active : ""}
                 >
-                  <Link href={page.href}>{page.title}</Link>
+                  <Link
+                    href={page.href}
+                    onClick={() => {
+                      setShowDrawer(false);
+                    }}
+                  >
+                    {page.title}
+                  </Link>
                 </li>
               );
             })}

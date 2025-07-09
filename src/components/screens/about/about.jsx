@@ -45,7 +45,7 @@ const AboutScreen = () => {
               falls on you if you can show you have solid, well-designed
               commercial building security systems in place.
             </p>
-            <CustomButton>Know More</CustomButton>
+            {/* <CustomButton>Know More</CustomButton> */}
           </div>
         </CustomContainer>
       </section>

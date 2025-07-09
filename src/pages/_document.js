@@ -6,7 +6,7 @@ export default function Document() {
     <Html lang="en">
       
       <Head />
-      <title>Master Cctv</title>
+      <title>Master CCTV</title>
       <body >
         <Main />
         <NextScript />

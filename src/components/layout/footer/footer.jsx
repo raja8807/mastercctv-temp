@@ -12,6 +12,7 @@ import {
   TelephoneFill,
   Youtube,
 } from "react-bootstrap-icons";
+import { CONTACT_DETAILS } from "@/constants/constants";
 
 const Footer = () => {
   return (
@@ -58,13 +59,26 @@ const Footer = () => {
 
               <Col xs={12} md={6} lg={3}>
                 <div className={styles.contact}>
-                  <div className={styles.row}>
-                    <EnvelopeFill /> martercctv@gmastercctv.com
-                  </div>
-                  <div className={styles.row}>
-                    <TelephoneFill /> +91 98765 32100
-                  </div>
-                  <div className={styles.add}>
+                  <Link
+                    className={styles.row}
+                    href={`mailto:${CONTACT_DETAILS.email}`}
+                  >
+                    <EnvelopeFill /> {CONTACT_DETAILS.email}
+                  </Link>
+
+                  <Link
+                    href={`tel:+91${CONTACT_DETAILS.phoneNo1}`}
+                    className={styles.row}
+                  >
+                    <TelephoneFill /> +91 {CONTACT_DETAILS.phoneNo1}
+                  </Link>
+                  <Link
+                    href={`tel:+91${CONTACT_DETAILS.phoneNo2}`}
+                    className={styles.row}
+                  >
+                    <TelephoneFill /> +91 {CONTACT_DETAILS.phoneNo2}
+                  </Link>
+                  {/* <div className={styles.add}>
                     <p>
                       <br />
                       add line1 scasc,
@@ -73,26 +87,26 @@ const Footer = () => {
                       <br />
                       add line3 - 605555.
                     </p>
-                  </div>
+                  </div> */}
                 </div>
               </Col>
             </Row>
           </div>
           <div className={styles.social}>
             <div className={styles.links}>
-              <Link href={'/'}>
+              <Link href={"/"}>
                 <Facebook />
                 Facebook
               </Link>
-              <Link href={'/'}>
+              <Link href={"/"}>
                 <Instagram />
                 Instagram
               </Link>
-              <Link href={'/'}>
+              <Link href={"/"}>
                 <Youtube />
                 Youtube
               </Link>
-              <Link href={'/'}>
+              <Link href={"/"}>
                 <Linkedin />
                 LinkedInn
               </Link>

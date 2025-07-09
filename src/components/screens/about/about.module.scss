@@ -193,4 +193,44 @@
       background-image: url("/images/banner-8.webp");
     }
   }
+
+  @include respond-below(md) {
+    .s1 {
+      padding: 50px 0;
+
+      .left {
+        padding: 0;
+        margin-bottom: 24px;
+        h2 {
+          font-size: 35px;
+        }
+
+        img {
+          width: 100%;
+          margin: 10px 0;
+        }
+      }
+
+      .rght {
+        p {
+          font-size: 17px;
+        }
+        gap: 24px;
+      }
+    }
+
+    .s2,
+    .s3,
+    .s4 {
+      height: fit-content;
+      padding: 0 20px;
+      margin-bottom: 50px;
+
+      .right {
+        height: 400px;
+      }
+    }
+
+    
+  }
 }

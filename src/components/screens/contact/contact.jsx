@@ -8,10 +8,35 @@ import CustomInput from "@/components/ui/cuatom_input/cuatom_input";
 import CustomSelect from "@/components/ui/select/custom_select/custom_select";
 import CustomTextArea from "@/components/ui/custom_textarea/custom_textarea";
 
-const ContactScreen = () => {
-  //    s
-  //
+export const GetStartedBox = () => {
+  return (
+    <div className={styles.GetStartedBox}>
+      <div>
+        <h4> Tailored Solutions For Your Security Prioritie</h4>
+        <p>
+          We will design, install, and upgrade solutions to meet business
+          specific needs and budgets from large.
+        </p>
 
+        <div>
+          <div>
+            <TelephoneFill /> Emergency Line:02 01061245741
+          </div>
+          <div>
+            <TelephoneFill /> Location:Brooklyn, New York, USA
+          </div>
+          <div>
+            <TelephoneFill /> Mon - Fri:8:00 am - 7:00 pm
+          </div>
+        </div>
+
+        <CustomButton variant={2}>Get Started</CustomButton>
+      </div>
+    </div>
+  );
+};
+
+const ContactScreen = () => {
   return (
     <div className={styles.ContactScreen}>
       <section className={styles.banner}>
@@ -32,29 +57,7 @@ const ContactScreen = () => {
           <div className={styles.box}>
             <Row>
               <Col xs={12} md={6} lg={4}>
-                <div className={styles.left}>
-                  <div>
-                    <h4> Tailored Solutions For Your Security Prioritie</h4>
-                    <p>
-                      We will design, install, and upgrade solutions to meet
-                      business specific needs and budgets from large.
-                    </p>
-
-                    <div>
-                      <div>
-                        <TelephoneFill /> Emergency Line:02 01061245741
-                      </div>
-                      <div>
-                        <TelephoneFill /> Location:Brooklyn, New York, USA
-                      </div>
-                      <div>
-                        <TelephoneFill /> Mon - Fri:8:00 am - 7:00 pm
-                      </div>
-                    </div>
-
-                    <CustomButton variant={2}>Get Started</CustomButton>
-                  </div>
-                </div>
+                <GetStartedBox />
               </Col>
               <Col xs={12} md={6} lg={8}>
                 <div className={styles.right}>
@@ -80,9 +83,7 @@ const ContactScreen = () => {
                       <br />
                       <CustomButton>
                         <ArrowRight />
-                        &nbsp;
-                        &nbsp;
-                        Submit Request
+                        &nbsp; &nbsp; Submit Request
                       </CustomButton>
                     </div>
                   </form>
