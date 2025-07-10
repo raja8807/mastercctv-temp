@@ -2,12 +2,18 @@ import React from "react";
 import styles from "./contact.module.scss";
 import CustomContainer from "@/components/ui/custom_container/custom_container";
 import { Col, Row } from "react-bootstrap";
-import { ArrowRight, ClockFill, EnvelopeFill, TelephoneFill } from "react-bootstrap-icons";
+import {
+  ArrowRight,
+  ClockFill,
+  EnvelopeFill,
+  TelephoneFill,
+} from "react-bootstrap-icons";
 import CustomButton from "@/components/ui/custom_button/custom_button";
 import CustomInput from "@/components/ui/cuatom_input/cuatom_input";
 import CustomSelect from "@/components/ui/select/custom_select/custom_select";
 import CustomTextArea from "@/components/ui/custom_textarea/custom_textarea";
 import { CONTACT_DETAILS } from "@/constants/constants";
+import TestimonialsSection from "../home/sections/testimonials/testimonials";
 
 export const GetStartedBox = () => {
   return (
@@ -26,7 +32,7 @@ export const GetStartedBox = () => {
           <div>
             <TelephoneFill /> +91 {CONTACT_DETAILS.phoneNo2}
           </div>
-             <div>
+          <div>
             <TelephoneFill /> +91 {CONTACT_DETAILS.phoneNo2}
           </div>
           <div>
@@ -97,6 +103,8 @@ const ContactScreen = () => {
           </div>
         </CustomContainer>
       </div>
+
+      <TestimonialsSection />
     </div>
   );
 };

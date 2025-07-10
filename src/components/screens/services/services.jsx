@@ -5,6 +5,7 @@ import CustomContainer from "@/components/ui/custom_container/custom_container";
 import { GetStartedBox } from "../contact/contact";
 import { Col, Image, Row } from "react-bootstrap";
 import { FilePdf } from "react-bootstrap-icons";
+import TestimonialsSection from "../home/sections/testimonials/testimonials";
 
 const ServiesScreen = () => {
   return (
@@ -134,6 +135,8 @@ const ServiesScreen = () => {
           </div>
         </div>
       </CustomContainer>
+      <TestimonialsSection />
+
     </div>
   );
 };

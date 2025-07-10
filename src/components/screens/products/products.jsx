@@ -23,7 +23,13 @@ export const getFile = (prod) => {
   }
 };
 
-const ProductCard = ({ prod, type, addToCart }) => {
+const ProductCard = ({ prod, addToCart,cartItems }) => {
+
+  
+
+
+  const isInCart = cartItems.find(i=>i.name === prod.name) != null
+
   return (
     <div className={styles.ProductCard}>
       <div
@@ -33,13 +39,13 @@ const ProductCard = ({ prod, type, addToCart }) => {
         }}
       >
         <div
-          className={styles.cartBtn}
+          className={`${styles.cartBtn} ${isInCart ? styles.inCart : ''}`}
           onClick={() => {
             addToCart(prod);
           }}
         >
           <div>
-            <CartCheckFill /> Add To Cart
+            <CartCheckFill /> {isInCart ? 'Added' : 'Add'} To Cart
           </div>
         </div>
       </div>
@@ -97,6 +103,7 @@ const ProductsScreen = ({ cartItems, addToCart }) => {
                   {PRODUCTS_LIST.CAMERAS.map((prod, idx) => (
                     <Col xs={12} md={6} lg={4} key={`cam_${idx}`}>
                       <ProductCard
+                      cartItems={cartItems}
                         prod={prod}
                         type="camera"
                         addToCart={addToCart}
@@ -112,6 +119,8 @@ const ProductsScreen = ({ cartItems, addToCart }) => {
                   {PRODUCTS_LIST.DVRS.map((prod, idx) => (
                     <Col xs={12} md={6} lg={4} key={`dvr_${idx}`}>
                       <ProductCard
+                      cartItems={cartItems}
+
                         prod={prod}
                         type="dvr"
                         addToCart={addToCart}
@@ -127,6 +136,8 @@ const ProductsScreen = ({ cartItems, addToCart }) => {
                   {PRODUCTS_LIST.NVRS.map((prod, idx) => (
                     <Col xs={12} md={6} lg={4} key={`nvr_${idx}`}>
                       <ProductCard
+                      cartItems={cartItems}
+
                         prod={prod}
                         type="nvr"
                         addToCart={addToCart}
@@ -142,6 +153,8 @@ const ProductsScreen = ({ cartItems, addToCart }) => {
                   {PRODUCTS_LIST.HDDS.map((prod, idx) => (
                     <Col xs={12} md={6} lg={4} key={`hdd_${idx}`}>
                       <ProductCard
+                      cartItems={cartItems}
+
                         prod={prod}
                         type="hdd"
                         addToCart={addToCart}

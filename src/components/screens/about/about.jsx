@@ -5,6 +5,7 @@ import CustomButton from "@/components/ui/custom_button/custom_button";
 import { Col, Image, Row } from "react-bootstrap";
 import { ArrowRight, CheckCircleFill } from "react-bootstrap-icons";
 import EnquireSection from "../home/sections/EnquireSection/Enquire";
+import TestimonialsSection from "../home/sections/testimonials/testimonials";
 
 //
 //
@@ -40,10 +41,10 @@ const AboutScreen = () => {
           <div className={styles.cont}>
             <h1>About Us</h1>
             <p>
-              Not only will this reduce the probability of crime happening on
-              your property, it will reduce or eliminate any liability that
-              falls on you if you can show you have solid, well-designed
-              commercial building security systems in place.
+              Welcome to Master CCTV, your trusted partner for complete CCTV
+              solutions. With over 5 years of experience in the industry, we
+              specialize in providing advanced CCTV camera systems and
+              professional installation services at the most affordable prices.
             </p>
             {/* <CustomButton>Know More</CustomButton> */}
           </div>
@@ -66,29 +67,32 @@ const AboutScreen = () => {
             <Col xs={12} md={5}>
               <div className={styles.rght}>
                 <p>
-                  Helping families live intelligently means we’re always working
-                  to bring our customers the latest technology. As one of the
-                  premier providers of smart home technology, we are recognized
-                  throughout the industry for our products, innovation &
-                  customer satisfaction.
+                  We understand that security is essential for your home and
+                  business. That’s why we offer cutting-edge cameras,
+                  high-quality equipment like hard disks and cables, and expert
+                  guidance to ensure you get the best protection for your needs.
                 </p>
                 <b>
-                  Don’t worry about any thing, security experts will install
-                  your new system, activate it, and show how to use it.
+                  Whether you need to secure your home, office, shop, or
+                  warehouse, we’re here to help with reliable, tailored
+                  solutions. Join our growing family of satisfied customers who
+                  trust Master CCTV for safety and peace of mind.
                 </b>
 
                 <div className={styles.list}>
+                  <div>At Master CCTV, our mission is simple:</div>
                   <div>
                     <CheckCircleFill />
-                    Live Stream From Any Mobile and Lifetime Guarantee
+                    Deliver top-quality security systems at low prices
                   </div>
                   <div>
                     <CheckCircleFill />
-                    Live Stream From Any Mobile and Lifetime Guarantee
+                    Provide expert installation by trained professionals{" "}
                   </div>
                   <div>
                     <CheckCircleFill />
-                    Live Stream From Any Mobile and Lifetime Guarantee
+                    Offer exclusive discounts to make security accessible for
+                    everyone{" "}
                   </div>
                 </div>
 
@@ -129,7 +133,7 @@ const AboutScreen = () => {
           </Col>
         </Row>
       </section>
-
+      {/* 
       <section className={styles.s3}>
         <Row>
           <Col xs={12} md={6}>
@@ -185,7 +189,7 @@ const AboutScreen = () => {
             </div>
           </Col>
         </Row>
-      </section>
+      </section> */}
 
       <section className={styles.s4}>
         <Row>
@@ -226,8 +230,10 @@ const AboutScreen = () => {
           </Col>
         </Row>
       </section>
+      <TestimonialsSection/>
 
-      <EnquireSection/>
+      <EnquireSection />
+
     </div>
   );
 };

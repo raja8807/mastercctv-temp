@@ -43,7 +43,7 @@ const Footer = () => {
                     </div>
                   </Col>
                   <Col>
-                    <div className={styles.box}>
+                    {/* <div className={styles.box}>
                       <h4>Quick Links</h4>
                       {PAGES.map((page) => {
                         return (
@@ -52,7 +52,7 @@ const Footer = () => {
                           </Link>
                         );
                       })}
-                    </div>
+                    </div> */}
                   </Col>
                 </Row>
               </Col>
@@ -102,10 +102,7 @@ const Footer = () => {
                 <Instagram />
                 Instagram
               </Link>
-              <Link href={"/"}>
-                <Youtube />
-                Youtube
-              </Link>
+             
               <Link href={"/"}>
                 <Linkedin />
                 LinkedInn

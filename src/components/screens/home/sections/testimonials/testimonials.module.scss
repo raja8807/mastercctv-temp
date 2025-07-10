@@ -1,0 +1,47 @@
+.TestimonialsSection {
+    padding: 80px 0;
+  .testimonial {
+    display: flex;
+    gap: 20px;
+    padding: 0px 20px;
+
+    i {
+      font-weight: 600;
+      font-size: 30px;
+      color: $color-p1;
+    }
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 20px;
+
+      .stars {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: $color-s1;
+      }
+
+      small {
+        font-weight: bold;
+        font-size: 18px;
+        span {
+          color: $color-g3;
+        }
+      }
+    }
+  }
+
+  @include respond-below(md) {
+    .testimonial {
+      flex-direction: column;
+      align-items: center;
+
+      i {
+        font-size: 24px;
+      }
+    }
+  }
+}

@@ -34,7 +34,9 @@ const EnquireSection = () => {
                 access and control everything from lights, locks, and
                 thermostats.
               </p>
-              <CustomButton variant={2}>Our Products</CustomButton>
+              <CustomButton variant={2}
+              href={'/products'}
+              >Our Products</CustomButton>
               <br/>
               <br/>
             </div>
@@ -51,22 +53,14 @@ const EnquireSection = () => {
               <div className={styles.countCont}>
                 <div>
                   <h1>6000</h1>
-                  <b>Projects And Systems Completed in 2020</b>
+                  <b>Projects & Completed between 2020 - 2025</b>
 
                   <p>
                     Ensure the valuable assets and environments that help you
                     serve your customers and progress.
                   </p>
                 </div>
-                <div>
-                  <h1>6000</h1>
-                  <b>Projects And Systems Completed in 2020</b>
-
-                  <p>
-                    Ensure the valuable assets and environments that help you
-                    serve your customers and progress.
-                  </p>
-                </div>
+             
               </div>
             </div>
           </div>

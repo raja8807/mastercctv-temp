@@ -76,7 +76,7 @@
       bottom: 0;
       left: 50%;
       cursor: pointer;
-      &:hover {
+      &:hover , &.inCart{
         background-color: $color-s1;
       }
 
@@ -91,6 +91,11 @@
       transform-origin: bottom;
       svg {
         margin: 0 5px 3px 0;
+      }
+
+      &.inCart{
+        transform: translateX(-50%) scaleY(1) !important;
+
       }
 
       @include respond-below(md) {

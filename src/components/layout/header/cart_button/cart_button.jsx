@@ -96,7 +96,7 @@ const CartButton = ({ cartItems = [], scrolled, setCartItems }) => {
             </div>
           )}
 
-          <div className={styles.empty}>
+        { cartItems.length === 0 && <div className={styles.empty}>
             Cart is empty
             <CustomButton
             href={'/products'}
@@ -105,7 +105,7 @@ const CartButton = ({ cartItems = [], scrolled, setCartItems }) => {
               setShowDrawer(false)
             }}
             >Broswe Products</CustomButton>
-          </div>
+          </div>}
         </Offcanvas.Body>
       </Offcanvas>
       <div
