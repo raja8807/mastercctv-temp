@@ -34,7 +34,7 @@ export const PAGES = [
   },
 ];
 
-const Header = ({ cartItems }) => {
+const Header = ({ cartItems,setCartItems }) => {
   const router = useRouter();
 
   const [hidden, setHidden] = useState(false);
@@ -89,7 +89,7 @@ const Header = ({ cartItems }) => {
               <ArrowRight />
             </Link>
 
-            <CartButton cartItems={cartItems} scrolled={!isAtTop} />
+            <CartButton cartItems={cartItems} scrolled={!isAtTop} setCartItems={setCartItems}/>
           </nav>
 
           <MenuButton
@@ -97,6 +97,7 @@ const Header = ({ cartItems }) => {
             router={router}
             scrolled={!isAtTop}
             cartItems={cartItems}
+            setCartItems={setCartItems}
           />
         </div>
       </CustomContainer>

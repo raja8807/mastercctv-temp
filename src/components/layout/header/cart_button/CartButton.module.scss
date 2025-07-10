@@ -29,35 +29,67 @@
 
 .CartItem {
   padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  border-bottom: 1px solid $color-g1;
 
-  .img {
-    height: 100px;
-    width: 100px;
-    background-size: contain;
-    margin-right: 10px;
-    background-repeat: no-repeat;
-    background-position: center;
+  .det {
+    display: flex;
+    align-items: center;
+    .img {
+      height: 100px;
+      width: 100px;
+      background-size: contain;
+      margin-right: 10px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   }
 
   .controls {
     display: flex;
-    align-items: center;
+    justify-content: flex-end;
     gap: 10px;
+
+    .btn {
+      outline: none !important;
+      border: none !important;
+      height: 25px;
+      aspect-ratio: 1 / 1;
+      cursor: pointer;
+
+      @include flexCenter;
+      p {
+        margin-bottom: 2px;
+      }
+      background-color: $color-p2;
+      color: white;
+      border-radius: 50%;
+    }
   }
-  .btn {
-    width: 30px;
-    height: 30px;
-    font-size: 18px;
-    border-radius: 50%;
+}
+
+.body {
+  .cartItems {
+    margin-bottom: 100px;
+    position: relative;
+    height: calc(100% - 30px);
+    overflow: auto;
   }
-  .count {
-    min-height: 20px;
-    text-align: center;
+  padding: 0;
+
+  .Checkout {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    button {
+      width: 100%;
+    }
   }
+}
+
+.empty {
+  height: 100%;
+  @include flexCenter;
+  gap: 20px;
+  flex-direction: column;
 }

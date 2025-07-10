@@ -4,13 +4,13 @@ import { List, X } from "react-bootstrap-icons";
 import Link from "next/link";
 import CartButton from "../cart_button/cart_button";
 
-const MenuButton = ({ PAGES, router, scrolled, cartItems }) => {
+const MenuButton = ({ PAGES, router, scrolled, cartItems,setCartItems }) => {
   const [showDrawer, setShowDrawer] = useState(false);
 
   return (
     <div className={`${styles.MenuButton} ${scrolled ? styles.scrolled : ""}`}>
       <div>
-        <CartButton cartItems={cartItems} scrolled={scrolled}/>
+        <CartButton cartItems={cartItems} scrolled={scrolled} setCartItems={setCartItems}/>
       </div>
       &nbsp; &nbsp;
       {showDrawer ? (

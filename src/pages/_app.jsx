@@ -52,7 +52,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <main className={`${styles.main} ${fonts.MainFont}`}>
-      <Layout cartItems={cartItems} addToCart={addToCart}>
+      <Layout cartItems={cartItems} addToCart={addToCart} setCartItems={setCartItems}>
         <Component {...pageProps} addToCart={addToCart} cartItems={cartItems} />
         <ToastContainer position="bottom-right" />
       </Layout>
