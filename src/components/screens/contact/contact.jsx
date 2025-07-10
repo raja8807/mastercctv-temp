@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./contact.module.scss";
 import CustomContainer from "@/components/ui/custom_container/custom_container";
 import { Col, Row } from "react-bootstrap";
@@ -6,6 +6,7 @@ import {
   ArrowRight,
   ClockFill,
   EnvelopeFill,
+  Phone,
   TelephoneFill,
 } from "react-bootstrap-icons";
 import CustomButton from "@/components/ui/custom_button/custom_button";
@@ -47,6 +48,39 @@ export const GetStartedBox = () => {
 };
 
 const ContactScreen = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      alert(data.message);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        message: "",
+      });
+    } catch (error) {
+      console.log(error);
+
+      alert("Something went wrong");
+    }
+  };
+
   return (
     <div className={styles.ContactScreen}>
       <section className={styles.banner}>
@@ -71,7 +105,7 @@ const ContactScreen = () => {
               </Col>
               <Col xs={12} md={6} lg={8}>
                 <div className={styles.right}>
-                  <form>
+                  <form onSubmit={handleSubmit}>
                     <h3>Get In Touch</h3>
                     <p>
                       We take great pride in everything that we do, control over
@@ -81,14 +115,51 @@ const ContactScreen = () => {
 
                     <div className={styles.controls}>
                       <div>
-                        <CustomInput placeHolder={"Name"} />
-                        <CustomInput placeHolder={"Email"} />
+                        <CustomInput
+                          placeHolder={"Name"}
+                          value={formData.name}
+                          onChange={(e, v) => {
+                            setFormData((prev) => ({ ...prev, name: v }));
+                          }}
+                          required
+                        />
+                        <CustomInput
+                          placeHolder={"Email"}
+                          value={formData.email}
+                          onChange={(e, v) => {
+                            setFormData((prev) => ({ ...prev, email: v }));
+                          }}
+                          required
+                          type="email"
+                        />
                       </div>
                       <div>
-                        <CustomInput placeHolder={"Phone"} />
-                        <CustomSelect placeholder={"Select your services"} />
+                        <CustomInput
+                          placeHolder={"Phone"}
+                          value={formData.phone}
+                          onChange={(e, v) => {
+                            setFormData((prev) => ({ ...prev, phone: v }));
+                          }}
+                          required
+                        />
+                        <CustomSelect
+                          placeholder={"Select your services"}
+                          options={["Service 1", "Service 2"]}
+                          value={formData.service}
+                          onChange={(e, v) => {
+                            setFormData((prev) => ({ ...prev, service: v }));
+                          }}
+                          required
+                        />
                       </div>
-                      <CustomTextArea placeHolder={"Your Message.."} />
+                      <CustomTextArea
+                        placeHolder={"Your Message.."}
+                        value={formData.message}
+                        onChange={(e, v) => {
+                          setFormData((prev) => ({ ...prev, message: v }));
+                        }}
+                        required
+                      />
                       <br />
                       <br />
                       <CustomButton>

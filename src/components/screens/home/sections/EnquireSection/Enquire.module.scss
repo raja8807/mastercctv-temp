@@ -58,49 +58,6 @@
       width: 50%;
       height: 690px;
       overflow: hidden;
-      form {
-        padding: 24px;
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        background-color: white;
-
-        p {
-          color: $color-g3;
-          font-size: 15px;
-          font-weight: bold;
-
-          a {
-            color: $color-p2;
-            text-decoration: underline;
-          }
-        }
-
-        h4 {
-          color: $color-p2;
-          margin: 0;
-        }
-
-        .row {
-          display: flex;
-          gap: 20px;
-          > * {
-            width: 100%;
-          }
-        }
-
-        .ints {
-          display: flex;
-          gap: 20px;
-          flex-wrap: wrap;
-          margin: 16px 0;
-
-          label {
-            font-size: 15px;
-            color: $color_g3;
-          }
-        }
-      }
     }
 
     @include respond-below(md) {
@@ -110,6 +67,50 @@
         height: fit-content !important;
         width: 100% !important;
       }
+    }
+  }
+}
+
+.EnquireForm {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: white;
+
+  p {
+    color: $color-g3;
+    font-size: 15px;
+    font-weight: bold;
+
+    a {
+      color: $color-p2;
+      text-decoration: underline;
+    }
+  }
+
+  h4 {
+    color: $color-p2;
+    margin: 0;
+  }
+
+  .row {
+    display: flex;
+    gap: 20px;
+    > * {
+      width: 100%;
+    }
+  }
+
+  .ints {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 16px 0;
+
+    label {
+      font-size: 15px;
+      color: $color_g3;
     }
   }
 }

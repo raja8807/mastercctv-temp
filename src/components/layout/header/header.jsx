@@ -34,7 +34,7 @@ export const PAGES = [
   },
 ];
 
-const Header = ({ cartItems,setCartItems }) => {
+const Header = ({ cartItems, setCartItems, setShowPopup }) => {
   const router = useRouter();
 
   const [hidden, setHidden] = useState(false);
@@ -84,21 +84,32 @@ const Header = ({ cartItems,setCartItems }) => {
             </ul>
             <div className={styles.line} />
 
-            <Link href="/" className={styles.box}>
-              <EnvelopeFill />
-              <ArrowRight />
-            </Link>
+            <div className={styles.cta}>
+              <div
+                onClick={() => {
+                  setShowPopup(true);
+                }}
+                className={styles.box}
+              >
+                <EnvelopeFill />
+                <ArrowRight />
+              </div>
 
-            <CartButton cartItems={cartItems} scrolled={!isAtTop} setCartItems={setCartItems}/>
+              <CartButton
+                cartItems={cartItems}
+                scrolled={!isAtTop}
+                setCartItems={setCartItems}
+              />
+
+              <MenuButton
+                PAGES={PAGES}
+                router={router}
+                scrolled={!isAtTop}
+                cartItems={cartItems}
+                setCartItems={setCartItems}
+              />
+            </div>
           </nav>
-
-          <MenuButton
-            PAGES={PAGES}
-            router={router}
-            scrolled={!isAtTop}
-            cartItems={cartItems}
-            setCartItems={setCartItems}
-          />
         </div>
       </CustomContainer>
     </header>

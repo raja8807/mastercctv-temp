@@ -30,21 +30,6 @@
         background-color: rgba(230, 234, 239, 0.15);
       }
 
-      .box {
-        background-color: white;
-        padding: 12px 16px;
-        font-size: 23px;
-        display: flex;
-        gap: 10px;
-
-        color: $color-p2;
-
-        &:hover {
-          background-color: $color-s1;
-          color: white;
-        }
-      }
-
       > ul {
         display: flex;
         gap: 30px;
@@ -79,7 +64,10 @@
 
     @include respond-below(md) {
       .lgNav {
-        display: none;
+        > ul,
+        .line {
+          display: none;
+        }
       }
     }
   }
@@ -106,6 +94,27 @@
         color: white;
         background-color: $color-p2;
       }
+    }
+  }
+}
+.cta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  .box {
+    cursor: pointer;
+    background-color: white;
+    padding: 12px 16px;
+    font-size: 23px;
+    display: flex;
+    gap: 10px;
+
+    color: $color-p2;
+
+    &:hover {
+      background-color: $color-s1;
+      color: white;
     }
   }
 }

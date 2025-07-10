@@ -10,6 +10,7 @@ import styles from "../styles/Home.module.scss";
 import fonts from "@/styles/fonts";
 import { ToastContainer } from "react-toastify";
 import Layout from "@/components/layout/layout";
+import EnquiryPopup from "@/components/enquiry_popup/enquiry_popup";
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
@@ -34,6 +35,19 @@ export default function App({ Component, pageProps }) {
 
   const [cartItems, setCartItems] = useState([]);
 
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    const isPopupShown = localStorage.getItem("isPopupShown");
+
+    if (!isPopupShown) {
+      setTimeout(() => {
+        setShowPopup(true);
+        localStorage.setItem("isPopupShown", true)
+      }, 5000);
+    }
+  }, []);
+
   const addToCart = (item) => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find((i) => i.name === item.name);
@@ -52,7 +66,13 @@ export default function App({ Component, pageProps }) {
 
   return (
     <main className={`${styles.main} ${fonts.MainFont}`}>
-      <Layout cartItems={cartItems} addToCart={addToCart} setCartItems={setCartItems}>
+      <EnquiryPopup setShowPopup={setShowPopup} showPopup={showPopup} />
+      <Layout
+        cartItems={cartItems}
+        addToCart={addToCart}
+        setCartItems={setCartItems}
+        setShowPopup={setShowPopup}
+      >
         <Component {...pageProps} addToCart={addToCart} cartItems={cartItems} />
         <ToastContainer position="bottom-right" />
       </Layout>

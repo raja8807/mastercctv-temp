@@ -8,8 +8,9 @@ import ControlLabel from "@/components/ui/contol_label/control_label";
 import { Form } from "react-bootstrap";
 import CustomButton from "@/components/ui/custom_button/custom_button";
 import { ArrowRight } from "react-bootstrap-icons";
+import { CONTACT_DETAILS } from "@/constants/constants";
 
-const EnquireSection = () => {
+export const EnquireForm = () => {
   const int = [
     "Intrusion Detection",
     "Video Surveillance",
@@ -19,6 +20,48 @@ const EnquireSection = () => {
     "Access Control",
   ];
 
+  return (
+    <form className={styles.EnquireForm}>
+      <h4>Request a Quote</h4>
+      <p>
+        Please complete the form below, to request a quote, and we’ll be in
+        touch. Or you can call us <Link href="/">{CONTACT_DETAILS.phoneNo1}</Link> and our
+        specialists will provide the necessary help!
+      </p>
+
+      <div className={styles.row}>
+        <CustomSelect label={"Home Or Business"} placeholder={"Select.."} />
+        <CustomSelect label={"Industry"} placeholder={"Select.."} />
+      </div>
+      <div className={styles.row}>
+        <CustomSelect label={"System Size"} placeholder={"Select.."} />
+        <CustomSelect label={"Own Or Rent?"} placeholder={"Select.."} />
+      </div>
+      <div className={styles.row}>
+        <CustomInput
+          placeholder={"example@gmail.com"}
+          label={"Email Address"}
+        />
+        <CustomInput placeholder={"98745 987456"} label={"Phone Number"} />
+      </div>
+
+      <div>
+        <ControlLabel label={"System Of Interests:"}></ControlLabel>
+        <div className={styles.ints}>
+          {int.map((i) => {
+            return <Form.Check key={i} label={i} />;
+          })}
+        </div>
+      </div>
+
+      <CustomButton variant={3}>
+        Submit Request <ArrowRight />
+      </CustomButton>
+    </form>
+  );
+};
+
+const EnquireSection = () => {
   return (
     <section className={styles.EnquireSection}>
       <CustomContainer>
@@ -34,11 +77,11 @@ const EnquireSection = () => {
                 access and control everything from lights, locks, and
                 thermostats.
               </p>
-              <CustomButton variant={2}
-              href={'/products'}
-              >Our Products</CustomButton>
-              <br/>
-              <br/>
+              <CustomButton variant={2} href={"/products"}>
+                Our Products
+              </CustomButton>
+              <br />
+              <br />
             </div>
 
             <div className={styles.s2}>
@@ -60,55 +103,12 @@ const EnquireSection = () => {
                     serve your customers and progress.
                   </p>
                 </div>
-             
               </div>
             </div>
           </div>
 
           <div className={styles.right}>
-            <form>
-              <h4>Request a Quote</h4>
-              <p>
-                Please complete the form below, to request a quote, and we’ll be
-                in touch. Or you can call us <Link href="/">98765 41230</Link>{" "}
-                and our specialists will provide the necessary help!
-              </p>
-
-              <div className={styles.row}>
-                <CustomSelect
-                  label={"Home Or Business"}
-                  placeholder={"Select.."}
-                />
-                <CustomSelect label={"Industry"} placeholder={"Select.."} />
-              </div>
-              <div className={styles.row}>
-                <CustomSelect label={"System Size"} placeholder={"Select.."} />
-                <CustomSelect label={"Own Or Rent?"} placeholder={"Select.."} />
-              </div>
-              <div className={styles.row}>
-                <CustomInput
-                  placeholder={"example@gmail.com"}
-                  label={"Email Address"}
-                />
-                <CustomInput
-                  placeholder={"98745 987456"}
-                  label={"Email Address"}
-                />
-              </div>
-
-              <div>
-                <ControlLabel label={"System Of Interests:"}></ControlLabel>
-                <div className={styles.ints}>
-                  {int.map((i) => {
-                    return <Form.Check key={i} label={i} />;
-                  })}
-                </div>
-              </div>
-
-              <CustomButton variant={3}>
-                Submit Request <ArrowRight />
-              </CustomButton>
-            </form>
+            <EnquireForm />
           </div>
         </div>
       </CustomContainer>
