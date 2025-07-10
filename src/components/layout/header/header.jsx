@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowRight, Envelope, EnvelopeFill } from "react-bootstrap-icons";
 import { useRouter } from "next/router";
 import MenuButton from "./menu_btn/menu_btn";
+import CartButton from "./cart_button/cart_button";
 
 export const PAGES = [
   {
@@ -33,7 +34,7 @@ export const PAGES = [
   },
 ];
 
-const Header = () => {
+const Header = ({ cartItems }) => {
   const router = useRouter();
 
   const [hidden, setHidden] = useState(false);
@@ -87,9 +88,16 @@ const Header = () => {
               <EnvelopeFill />
               <ArrowRight />
             </Link>
+
+            <CartButton cartItems={cartItems} scrolled={!isAtTop} />
           </nav>
 
-          <MenuButton PAGES={PAGES} router={router} scrolled={!isAtTop} />
+          <MenuButton
+            PAGES={PAGES}
+            router={router}
+            scrolled={!isAtTop}
+            cartItems={cartItems}
+          />
         </div>
       </CustomContainer>
     </header>

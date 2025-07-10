@@ -32,10 +32,28 @@ export default function App({ Component, pageProps }) {
     };
   }, []);
 
+  const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (item) => {
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find((i) => i.name === item.name);
+
+      if (existingItem) {
+        // Item exists: increase count
+        return prevItems.map((i) =>
+          i.name === item.name ? { ...i, count: i.count + 1 } : i
+        );
+      } else {
+        // Item doesn't exist: add with count 1
+        return [...prevItems, { ...item, count: 1 }];
+      }
+    });
+  };
+
   return (
     <main className={`${styles.main} ${fonts.MainFont}`}>
-      <Layout>
-        <Component {...pageProps} />
+      <Layout cartItems={cartItems} addToCart={addToCart}>
+        <Component {...pageProps} addToCart={addToCart} cartItems={cartItems} />
         <ToastContainer position="bottom-right" />
       </Layout>
     </main>

@@ -1,0 +1,22 @@
+.FilterButton {
+  background-color: $color-p2;
+  height: 50px;
+  aspect-ratio: 1 / 1;
+  border-radius: 4px;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  z-index: 100;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+  @include flexCenter;
+  svg {
+    color: white;
+    font-size: 30px;
+  }
+}
+
+.drawer {
+  padding: 20px;
+}

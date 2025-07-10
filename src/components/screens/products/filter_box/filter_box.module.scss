@@ -1,0 +1,22 @@
+.FilterBox {
+  h4 {
+    color: $color-p1;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  p {
+    color: $color-s1;
+    font-weight: 500;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-p1;
+    }
+
+    &.active {
+      color: $color-p2;
+    }
+  }
+}

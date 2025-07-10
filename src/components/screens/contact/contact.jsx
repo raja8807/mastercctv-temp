@@ -2,11 +2,12 @@ import React from "react";
 import styles from "./contact.module.scss";
 import CustomContainer from "@/components/ui/custom_container/custom_container";
 import { Col, Row } from "react-bootstrap";
-import { ArrowRight, TelephoneFill } from "react-bootstrap-icons";
+import { ArrowRight, ClockFill, EnvelopeFill, TelephoneFill } from "react-bootstrap-icons";
 import CustomButton from "@/components/ui/custom_button/custom_button";
 import CustomInput from "@/components/ui/cuatom_input/cuatom_input";
 import CustomSelect from "@/components/ui/select/custom_select/custom_select";
 import CustomTextArea from "@/components/ui/custom_textarea/custom_textarea";
+import { CONTACT_DETAILS } from "@/constants/constants";
 
 export const GetStartedBox = () => {
   return (
@@ -20,13 +21,16 @@ export const GetStartedBox = () => {
 
         <div>
           <div>
-            <TelephoneFill /> Emergency Line:02 01061245741
+            <EnvelopeFill /> {CONTACT_DETAILS.email}
           </div>
           <div>
-            <TelephoneFill /> Location:Brooklyn, New York, USA
+            <TelephoneFill /> +91 {CONTACT_DETAILS.phoneNo2}
+          </div>
+             <div>
+            <TelephoneFill /> +91 {CONTACT_DETAILS.phoneNo2}
           </div>
           <div>
-            <TelephoneFill /> Mon - Fri:8:00 am - 7:00 pm
+            <ClockFill /> Mon - Fri:8:00 am - 7:00 pm
           </div>
         </div>
 

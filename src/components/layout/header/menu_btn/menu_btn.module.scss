@@ -1,5 +1,6 @@
 .MenuButton {
-  svg {
+  display: flex;
+  > svg {
     color: white;
     font-size: 35px;
     cursor: pointer;
@@ -59,7 +60,7 @@
   }
 
   &.scrolled {
-    svg {
+    > svg {
       color: $color-p1;
     }
   }

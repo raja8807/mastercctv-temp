@@ -1,0 +1,63 @@
+.CartButton {
+  margin: 3px 4px 0 0;
+  position: relative;
+  cursor: pointer;
+
+  .bubble {
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    background-color: $color-p2;
+    color: white;
+    @include flexCenter;
+    font-size: 12px;
+    border-radius: 50%;
+    top: -5px;
+    right: -5px;
+  }
+  svg {
+    color: white;
+    font-size: 25px;
+  }
+
+  &.scrolled {
+    svg {
+      color: $color-p1;
+    }
+  }
+}
+
+.CartItem {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .img {
+    height: 100px;
+    width: 100px;
+    background-size: contain;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .btn {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    border-radius: 50%;
+  }
+  .count {
+    min-height: 20px;
+    text-align: center;
+  }
+}
